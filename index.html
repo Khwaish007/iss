@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta content="with-device-width, initial-scale=1.0">
+    <title>MY Website</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a class="no1" href="#about-me">ABOUT ME</a></li>
+                    <li><a href="#education">EDUCATION</a></li>
+                    <li><a href="#education">ACHIEVEMENTS</a></li>
+                    <li><a href="#skills">SKILLS</a></li>
+                    <li><a href="blog.html" target="_blank">BLOGS</a></li>
+                    <li><a onclick="openPdf('JEE-Main.pdf')">CV</a></li>
+                    <button class="mode-toggle" onclick="toggleMode()">
+                        <span class="sun" id="sunIcon">☀️</span>
+                        <span class="moon" id="moonIcon">🌙</span>
+                      </button>
+                </ul>
+            </div>
+        </nav>
+        <div class="bitmoji-container">
+            <img class="bitmoji" src="bitmoji.jpeg">
+            <p class="bitmoji-text">Hi, I'm Khwaish Garg</p>
+        </div>
+
+        <section class="about-me" id="about-me">
+                <h2 class="title">About Me</h2>
+                <div class="about-content">
+                    <div class="column-left">
+                        <img class="image" src="khwaish.jpeg" style="margin-left: 120px">
+                    </div>
+                    <div class="column right">
+                        <div class="text1">
+                            <p id="paraid">Hey everyone! I'm Khwaish Garg, and I'm currently living in
+                                Hyderabad.
+                                Originally from Punjab, I'm a first-year student studying Computer Science at
+                                IIIT
+                                Hyderabad. I'm really into web development, and I'm excited to learn more about
+                                it.
+
+                                When I'm not studying, you'll usually find me listening to music or playing
+                                volleyball.
+
+                                Even though I'm just starting my B-Tech journey, I'm eager to explore and
+                                understand
+                                more about computer science. On my website, I share my experiences, skills, and
+                                achievements. Feel free to take a look around to learn more about me and what
+                                I'm up
+                                to.
+                                Let's enjoy the journey of learning and growing together in the world of
+                                technology!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <button class="button2" id="button2">Change Background</button>
+            <button class="fonts" id="fonts">Change Font</button>
+
+        </section>
+
+        <section class="education" id="education">
+
+            <h1>Education Background</h1>
+
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>Class</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>Little Angel</td>
+                        <td>LKG-2nd</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>KSB World School</td>
+                        <td>3th-6th</td>
+                        <td>98%</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>DAV Public School</td>
+                        <td>7th-12th</td>
+                        <td>97%</td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>IIIT Hyderabad</td>
+                        <td>Undergrad</td>
+                        <td>Ongoing</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h1>Achievements</h1>
+
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Activity</th>
+                        <th>Position</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>Chess</td>
+                        <td>Represented the school team in Districts</td>
+                        <td>2016-2019</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Volleyball</td>
+                        <td>Represented the academy in state level</td>
+                        <td>2018</td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td>Class 10th</td>
+                        <td>I got 97% in class 10th</td>
+                        <td>2020-2021</td>
+                    </tr>
+                    <tr>
+                        <td>4.</td>
+                        <td>JEE Mains</td>
+                        <td>I got 1662 rank in JEE mains</td>
+                        <td>2023</td>
+                    </tr>
+                    <tr>
+                        <td>5.</td>
+                        <td>JEE Advance</td>
+                        <td>I got 7046 rank in JEE advance</td>
+                        <td>2023</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <br>
+        <br>
+        <section class="skills">
+            <div class="skills-container">
+                <h2>Skills</h2>
+                <div class="skill-item">
+                    <span class="skill-icon">🚀</span> Web Development
+                </div>
+
+                <div class="skill-item">
+                    <span class="skill-icon">🎤</span> Public Speaking
+                </div>
+
+                <div class="skill-item">
+                    <span class="skill-icon">💻</span> Programming
+                </div>
+
+                <div class="skill-item">
+                    <span class="skill-icon">👩‍🍳</span> Cooking
+                </div>
+
+                <div class="skill-item">
+                    <span class="skill-icon">🎭</span> Acting
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/khwaish.30" target="_blank"><img src="instagram.avif"
+                    alt="Instagram"></a>
+            <a href="https://github.com/Khwaish007" target="_blank"><img src="github.webp" alt="Github"></a>
+            <a href="mailto:khwaish.garg@students.iiit.ac.in" target="_blank"><img src="outlook.png" alt="Outlook"></a>
+            <a href="mailto:khwaishgarg38@gmail.com" target="_blank"><img src="gmail.jpeg" alt="Gmail"></a>
+            <a href="https://www.discord.com/khwaish007" target="_blank"><img src="discord.jpeg" alt="Discord"></a>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Khwaish Garg</p>
+            <script type="text/javascript" src="script.js"></script>
+    </section>
+</body>
+
+</html>

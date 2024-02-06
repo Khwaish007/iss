@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            font-size: 16px;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .blog-post {
+            background-color: #fff;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .comments-section {
+            margin-top: 20px;
+        }
+
+        .comment-input {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .comment-input input {
+            flex: 1;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .comment-input button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .delete-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-left: 10px;
+        }
+
+        .like-btn {
+            background-image: url('heart.jpeg');
+            background-size: cover;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .like-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .likes-section {
+            margin-top: 10px;
+        }
+
+        .likes-section p {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Blogs</h1>
+    </header>
+
+    <article class="blog-post">
+        <h2>Blog 1: Exciting Journey</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod auctor ipsum, at varius leo consectetur
+            a. Nullam quis purus ac turpis hendrerit ultricies.</p>
+
+        <div class="comments-section">
+            <h3>Comments:</h3>
+            <div id="comments1"></div>
+            <div class="comment-input">
+                <input type="text" id="commentInput1" placeholder="Add a comment">
+                <button onclick="addComment(1)">Add Comment</button>
+                <button class="delete-btn" onclick="deleteComments(1)">Delete Comments</button>
+            </div>
+        </div>
+
+        <div class="likes-section">
+            <p>Likes: <span id="likeCount1">0</span></p>
+            <button class="like-btn" onclick="like(1)"></button>
+            <button class="delete-btn" onclick="unlike(1)">Unlike</button>
+        </div>
+    </article>
+
+    <article class="blog-post">
+        <h2>Blog 2: Learning Web Development</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod auctor ipsum, at varius leo consectetur
+            a. Nullam quis purus ac turpis hendrerit ultricies.</p>
+
+        <div class="comments-section">
+            <h3>Comments:</h3>
+            <div id="comments2"></div>
+            <div class="comment-input">
+                <input type="text" id="commentInput2" placeholder="Add a comment">
+                <button onclick="addComment(2)">Add Comment</button>
+                <button class="delete-btn" onclick="deleteComments(2)">Delete Comments</button>
+            </div>
+        </div>
+
+        <div class="likes-section">
+            <p>Likes: <span id="likeCount2">0</span></p>
+            <button class="like-btn" onclick="like(2)"></button>
+            <button class="delete-btn" onclick="unlike(2)">Unlike</button>
+        </div>
+    </article>
+
+    <footer>
+        &copy; 2024 My Blog Page
+    </footer>
+
+    <script>
+        new Image().src = 'heart.png';
+        window.onload = function () {
+            loadFromStorage(1);
+            loadFromStorage(2);
+        };
+
+        function addComment(blogId) {
+            var commentInput = document.getElementById(`commentInput${blogId}`);
+            var commentsContainer = document.getElementById(`comments${blogId}`);
+
+            var commentText = commentInput.value.trim();
+            if (commentText !== "") {
+                var commentDiv = document.createElement("div");
+                commentDiv.textContent = commentText;
+                commentsContainer.appendChild(commentDiv);
+                commentInput.value = "";
+                saveToStorage(blogId, 'comments', commentsContainer.innerHTML);
+            }
+        }
+
+        function deleteComments(blogId) {
+            var commentsContainer = document.getElementById(`comments${blogId}`);
+            commentsContainer.innerHTML = "";
+            saveToStorage(blogId, 'comments', '');
+        }
+
+        function like(blogId) {
+            var likeCountElement = document.getElementById(`likeCount${blogId}`);
+            var currentLikes = parseInt(likeCountElement.textContent);
+            likeCountElement.textContent = currentLikes + 1;
+            saveToStorage(blogId, 'likes', likeCountElement.textContent);
+        }
+
+        function unlike(blogId) {
+            var likeCountElement = document.getElementById(`likeCount${blogId}`);
+            var currentLikes = parseInt(likeCountElement.textContent);
+            if (currentLikes > 0) {
+                likeCountElement.textContent = currentLikes - 1;
+            }
+            saveToStorage(blogId, 'likes', likeCountElement.textContent);
+        }
+
+        function saveToStorage(blogId, key, value) {
+            localStorage.setItem(`blog${blogId}_${key}`, value);
+        }
+
+        function loadFromStorage(blogId) {
+            var commentsContainer = document.getElementById(`comments${blogId}`);
+            var likeCountElement = document.getElementById(`likeCount${blogId}`);
+            var storedComments = localStorage.getItem(`blog${blogId}_comments`);
+            if (storedComments) {
+                commentsContainer.innerHTML = storedComments;
+            }
+            var storedLikes = localStorage.getItem(`blog${blogId}_likes`);
+            if (storedLikes) {
+                likeCountElement.textContent = storedLikes;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

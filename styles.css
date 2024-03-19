@@ -1,40 +1,31 @@
+@font-face {
+    font-family: myfont;
+    src: url(Bubble.ttf);
+}
+@font-face {
+    font-family: myfont2;
+    src: url(Stencilia.ttf);
+}
+
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: myfont2;
     box-sizing: border-box;
-}
-
-.header {
-    background-color: #f4f4f4;
-    padding: 20px;
-    text-align: center;
-}
-
-.nav {
-    display: flex;
-    padding: 2% 6%;
-    justify-content: space-between;
-    align-items: center;
-    animation: slideIn 1s linear forwards;
-}
-
-.nav-links {
-    flex: 1;
+    background-color: white;
     text-align: center;
 }
 
 .nav-links ul li {
-    list-style: none;
     display: inline-block;
     padding: 8px 12px;
-    position: relative;
 }
 
 .nav-links ul li a {
     color: black;
-    text-decoration: none;
     font-size: 30px;
-    font-family: 'Poppins', sans-serif;
-    transition: 4s;
+    transition: 2s;
+    font-family: myfont;
+    text-decoration: none;
 }
 
 .nav-links ul li::after {
@@ -43,7 +34,6 @@ body {
     height: 2px;
     background: #f44336;
     display: block;
-    margin: auto;
     transition: 0.5s;
 }
 
@@ -51,141 +41,88 @@ body {
     width: 100%;
 }
 
-.no1 {
-    transition: 3s;
-}
+.mode-toggle {
+    padding: 6px 5px;
+    background-color: black;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .sun,
+  .moon {
+    font-size: 26px;
+  }
+
+  .dark-mode {
+    background-color: #25364e;
+    color: #ecf0f1;
+  }
+
 
 .bitmoji {
-    width: 500px;
-    height: 500px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
-    margin-bottom: 10px;
 }
 
 .bitmoji-text {
-    font-style: Sans-serif;
+    font-style: myfont;
     font-size: 65px;
     color: #333;
 }
 
-section .about-me {
-    margin-top: 160px;
-    background-color: white;
-    padding: 40px 0;
-}
-
-
-
 .about-me {
-    font-family: 'Poppins', sans-serif;
+    font-family: myfont;
+    background-color: rgb(247, 244, 244)
 }
 
 .about-me .title {
-    position: relative;
+    font-family:myfont2;
     text-align: center;
-    font-size: 45px;
-    font-weight: 600;
-    margin-top: -30px;
-}
-
-.about-me .title::before {
-    content: "";
-    position: relative;
-    bottom: 0px;
-    left: 50%;
-    width: 180px;
-    height: 3px;
-    background: #f44336;
-    transform: translate(-50%, -50%);
+    font-size: 50px;
 }
 
 .about-me .about-content {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
 
-.about-me .about-content .left {
-    width: 45%;
-}
-
-.about-me .about-content .left img {
-    margin-top: 50px;
-    width: 400px;
-    margin-left: 70px;
-    object-fit: cover;
-    border-radius: 6px;
-}
-
-.about-me .about-content .right {
-    width: 55%;
-}
 
 .about-me .about-content .right .text1 {
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 10px;
-    text-align: justify;
-    margin-right: 140px;
-}
-
-.about-me .about-content .right p {
+    font-size: 30px;
     text-align: justify;
 }
 
 .text1 {
-    flex-basis: 31%;
-    background: #e8edfb;
-    border-radius: 10px;
-    margin-bottom: 5%;
+    background: #d4ddf6;
+    border-radius: 100px;
     padding: 10px 80px;
-    box-sizing: border-box;
     margin-left: 50px;
-    transition: 0.5s;
+    transition: 5s;
 }
 
-.button2 {
+.button2,.fonts {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 30px;
     background-color: #3498db;
     color: #fff;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.button2:hover {
-    background-color: #2980b9;
-}
-
-.fonts {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.fonts:hover {
+.button2:hover,.fonts:hover {
     background-color: #2980b9;
 }
 
 .education {
     background-color: rgb(222, 226, 228);
-    text-align: center;
-    padding-bottom: 2%;
 }
 
 .education h1 {
     padding-top: 2%;
     font-size: 60px;
-
-    font-weight: 600;
     padding-bottom: 3%;
 }
 
@@ -198,10 +135,9 @@ section .about-me {
     text-align: center;
     border-collapse: collapse;
     font-size: 0.9em;
-    font-family: 'Ubuntu', sans-serif;
-    min-width: 400px;
+    font-family: myfont;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    transition: 1s;
+    transition: 3s;
 }
 
 .styled-table:hover {
@@ -227,24 +163,19 @@ section .about-me {
 .styled-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 }
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #454343;
+.box{
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content:center;
 }
-
-.styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #009879;
-}
-
 .skills-container {
     max-width: 600px;
-    width: 100%;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 8px;
-    margin-left: 30%;
+    width:100%;
 }
 
 .skill-item {
@@ -263,11 +194,6 @@ section .about-me {
     margin-right: 10px;
     color: #3498db;
 }
-
-h2 {
-    color: #333;
-}
-
 .social-icons {
     display: flex;
     align-items: center;
@@ -280,6 +206,13 @@ h2 {
 .social-icons img {
     width: 60px;
     border-radius: 50%;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #343a40;
+    color: #fff;
 }
 
 @keyframes slideNav {
@@ -319,21 +252,10 @@ h2 {
     }
 }
 
-.column-left {
-    opacity: 0;
-    transform: translateY(-50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
 .image {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.column-left-loaded .column-left {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .image-loaded .image {
@@ -364,170 +286,6 @@ h2 {
 }
 
 
-.footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #343a40;
-    color: #fff;
-}
-
-@media screen and (min-width: 301px) {
-
-    .nav-links ul li {
-        display: inline-block;
-        text-align: left;
-    }
-
-    .bitmoji-container {
-        margin-left: 20px;
-    }
-
-    .about-me .about-content {
-        flex-direction: row;
-    }
-
-    .about-me .about-content .left img {
-        margin-left: 20px;
-    }
-
-    .about-me .about-content .right .text1 {
-        margin-right: 20px;
-    }
-
-    .styled-table {
-        width: 80%;
-    }
-
-    .social-icons {
-        margin-left: 20px;
-    }
-}
-
-
-@media screen and (max-width: 768px) {
-    .nav-links ul li {
-        display: block;
-        text-align: center;
-    }
-
-    .bitmoji-container {
-        margin-left: 0;
-    }
-
-    .about-me .about-content {
-        flex-direction: column;
-    }
-
-    .about-me .about-content .left img {
-        margin-left: 0;
-    }
-
-    .about-me .about-content .right .text1 {
-        margin-right: 0;
-    }
-
-    .styled-table {
-        width: 100%;
-    }
-
-    .social-icons {
-        margin-left: 0;
-    }
-}
-
-.nav-links ul li {
-    display: inline-block;
-    text-align: left;
-}
-
-.bitmoji-container {
-    margin-left: 20px;
-}
-
-.about-me .about-content {
-    flex-direction: row;
-}
-
-.about-me .about-content .left img {
-    margin-left: 20px;
-}
-
-.about-me .about-content .right .text1 {
-    margin-right: 20px;
-}
-
-.styled-table {
-    width: 80%;
-}
-
-.social-icons {
-    margin-left: 20px;
-}
-
-
-@media screen and (min-width: 401px) {
-
-    .nav-links ul li {
-        display: inline-block;
-        text-align: left;
-    }
-
-    .bitmoji-container {
-        margin-left: 20px;
-    }
-
-    .about-me .about-content {
-        flex-direction: row;
-    }
-
-    .about-me .about-content .left img {
-        margin-left: 20px;
-    }
-
-    .about-me .about-content .right .text1 {
-        margin-right: 20px;
-    }
-
-    .styled-table {
-        width: 80%;
-    }
-
-    .social-icons {
-        margin-left: 20px;
-    }
-}
-
-@media screen and (min-width: 501px) {
-
-    .nav-links ul li {
-        display: inline-block;
-        text-align: left;
-    }
-
-    .bitmoji-container {
-        margin-left: 20px;
-    }
-
-    .about-me .about-content {
-        flex-direction: row;
-    }
-
-    .about-me .about-content .left img {
-        margin-left: 20px;
-    }
-
-    .about-me .about-content .right .text1 {
-        margin-right: 20px;
-    }
-
-    .styled-table {
-        width: 80%;
-    }
-
-    .social-icons {
-        margin-left: 20px;
-    }
-}
 
 body.dark-mode {
     background-color: #1a1a1a;
@@ -606,28 +364,3 @@ body.dark-mode .about-me .title{
     color:rgb(187, 132, 132);
 }
 
-.mode-toggle {
-      padding: 10px 20px;
-      background-color: black;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      display: inline-block;
-    }
-
-    .mode-toggle span {
-      font-weight: bold;
-      margin-right: 5px;
-    }
-
-    .sun,
-    .moon {
-      font-size: 24px;
-      margin-bottom: -6px;
-    }
-
-    .dark-mode {
-      background-color: #2c3e50;
-      color: #ecf0f1;
-    }

@@ -79,9 +79,26 @@ function openPdf(pdfPath) {
 }
 
 
-function toggleMode() {
-  console.log("Toggling dark mode...");
-  document.body.classList.toggle('dark-mode');
-  console.log("Body classList:", document.body.classList);
-}
+window.onload = function() {
+  document.getElementById("sunIcon").style.display = "inline";
+};
 
+function toggleMode() {
+  var body = document.body;
+  body.classList.toggle("light-mode");
+  body.classList.toggle("dark-mode");
+  var sunIcon = document.getElementById("sunIcon");
+  var moonIcon = document.getElementById("moonIcon");
+
+  if (body.classList.contains("dark-mode")) {
+    sunIcon.style.display = "none";
+    moonIcon.style.display = "inline";
+  } else {
+    sunIcon.style.display = "inline";
+    moonIcon.style.display = "none";
+  }
+}
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("sunIcon").style.display = "inline";
+  document.getElementById("moonIcon").style.display = "none";
+});
